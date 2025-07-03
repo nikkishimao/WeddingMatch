@@ -12,15 +12,101 @@ The primary end users of this database are couples seeking venues and specific s
 
 <h2>Design Report</h2>
 
-<p>Hi</p>
+<p>The project database system consists of 4 tables. The tables are Clients, Vendors, Venues,
+and Budget. The relationships between tables are shown in the ERD below. Each client can hire zero or more vendors, and each vendor can be hired by zero or more clients. Each client can rent only one venue on one date, and each venue can only be rented by one client on one date. Each client has one total budget. A screenshot of our Excel spreadsheet listing entities, attributes, and relationships is below.</p>
+
+<p align="center">
+  <img src="images/ExcelSpreadsheet.png" alt="image alt" width="600" />
+</p>
+
+<h3>Conceptual Model Diagram:</h3>
+
+<p align="center">
+  <img src="images/ConceptualModel.png" alt="image alt" width="600" />
+</p>
+
+<h3>Logical Model Diagram:</h3>
+
+<p align="center">
+  <img src="images/LogicalModel.png" alt="image alt" width="600" />
+</p>
 
 <h2>Database/Business Rules</h2>
 
-<p>Hi</p>
+<ol>
+  <li>
+    Each client only has one budget, rents out only one venue, but can hire zero or more vendors.
+    <ul>
+      <li>This was implemented through the foreign key matches of <code>budget_client_id</code>, <code>budget_vendor_id</code>, and <code>budget_venue_id</code> in the <code>budgets</code> table. When paired with a unique constraint for the two variables, this acts as a way for there not to be multiple pairs of <code>budget_client_id</code> and <code>budget_venue_id</code>.</li>
+    </ul>
+  </li>
+</ol>
 
-<h2>Physical Design</h2>
+<p align="center">
+  <img src="images/Rules1.png" alt="image alt" width="600" />
+</p>
 
-<p>Hi</p>
+<ol start="2">
+  <li>
+    Each client can only have their wedding when the venue and vendor are available.
+    <ul>
+      <li>This was implemented through triggers that raise an error if the venue or vendor availability is after the client’s event date. The venue or vendor can be available before the event date because we are assuming that the client would prefer an event sooner rather than later.</li>
+    </ul>
+  </li>
+</ol>
+
+<p align="center">
+  <img src="images/Rules2.png" alt="image alt" width="600" />
+</p>
+
+<ol start="3">
+  <li>
+    Each venue can only accommodate a wedding party of a maximum size.
+    <ul>
+      <li>If the client’s wedding size exceeds the venue capacity, the transaction cannot be completed. This is illustrated in the trigger below that raises an error if the wedding size is larger than the venue capacity.</li>
+    </ul>
+  </li>
+</ol>
+
+<p align="center">
+  <img src="images/Rules3.png" alt="image alt" width="600" />
+</p>
+
+<h2>Physical Design (SQL Walk-Through)</h2>
+
+<ul>
+  <li><a href="final_project_weddingmatch.sql">Full SQL</a></li>
+</ul>
+
+<ol>
+  <li>
+    Client and Vendor Tables
+  </li>
+</ol>
+
+<p align="center">
+  <img src="images/ClientVendor.png" alt="image alt" width="600" />
+</p>
+
+<ol start="2">
+  <li>
+    Venue and Budget Tables
+  </li>
+</ol>
+
+<p align="center">
+  <img src="images/VenueBudget.png" alt="image alt" width="600" />
+</p>
+
+<ol start="3">
+  <li>
+    Lookup Tables
+  </li>
+</ol>
+
+<p align="center">
+  <img src="images/Lookup.png" alt="image alt" width="600" />
+</p>
 
 <h2>Example Data and Queries</h2>
 
