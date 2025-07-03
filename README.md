@@ -110,8 +110,110 @@ and Budget. The relationships between tables are shown in the ERD below. Each cl
 
 <h2>Example Data and Queries</h2>
 
-<p>Hi</p>
+<p>We utilized a dataset comprising 40 entries distributed across clients, venues, vendors, and budgets to populate our database. These entries were designed to reflect real-world wedding planning scenarios, ensuring diverse and relatable data points. The dataset enabled us to test and showcase the functionality of our queries effectively, highlighting the database's capability to support wedding planning operations.
+
+The database has five main entities: Clients, Vendors, Venues, Budgets, and lookup tables for
+payment methods and statuses.
+It helps: 
+<ol>
+  <li>Clients find venues and vendors for their events.</li>
+  <li>Vendors showcase their services and manage bookings.</li>
+  <li>Track payment statuses and budgets efficiently.</li>
+</ol>
+
+</p>
+
+<h3>Query 1:</h3>
+
+<p><strong>Title</strong>: List of Clients with their chosen Venues and Vendors
+
+<strong>Use Case</strong>: Helps wedding planners identify which clients are linked to specific venues and vendors.
+</p>
+
+<p align="center">
+  <img src="images/Query1.png" alt="image alt" width="600" />
+</p>
+
+<h3>Query 2:</h3>
+
+<p><strong>Title</strong>: Vendors Willing to Travel for Upcoming Events
+
+<strong>Use Case</strong>: Assists clients in finding mobile vendors for events outside their base city.
+</p>
+
+<p align="center">
+  <img src="images/Query2.png" alt="image alt" width="600" />
+</p>
+
+<h3>Query 3:</h3>
+
+<p><strong>Title</strong>: Total Budget for a Specific Client
+
+<strong>Use Case</strong>: Quickly identify and review budget allocations for individual clients.
+</p>
+
+<p align="center">
+  <img src="images/Query3.png" alt="image alt" width="600" />
+</p>
+
+<h3>Query 4:</h3>
+
+<p><strong>Title</strong>: Availability of Venues in a Specific State
+
+<strong>Use Case</strong>: Enables planners to filter venues by state and future availability.
+</p>
+
+<p align="center">
+  <img src="images/Query4.png" alt="image alt" width="600" />
+</p>
+
+<h3>Query 5:</h3>
+
+<p><strong>Title</strong>: Payment Status Summary
+
+<strong>Use Case</strong>: Provides an overview of payment statuses to help planners follow up on pending or overdue payments.
+</p>
+
+<p align="center">
+  <img src="images/Query5.png" alt="image alt" width="600" />
+</p>
+
+<h3>Query 6:</h3>
+
+<p><strong>Title</strong>: Vendors with Costs Under a Specific Threshold
+
+<strong>Use Case</strong>: Helps clients stay within their budget by identifying cost-effective vendors.
+</p>
+
+<p align="center">
+  <img src="images/Query6.png" alt="image alt" width="600" />
+</p>
+
+<h3>Query 7:</h3>
+
+<p><strong>Title</strong>: Clients with Special Requests
+
+<strong>Use Case</strong>: Allows planners to personalize services for clients with special requests.
+</p>
+
+<p align="center">
+  <img src="images/Query7.png" alt="image alt" width="600" />
+</p>
 
 <h2>Interface Design</h2>
 
-<p>Hi</p>
+<h3>Landing Page</h3>
+<p align="center">
+  <img src="images/LandingPage.png" alt="image alt" width="600" />
+</p>
+
+<h3>Featured Vendors and Venues Page</h3>
+<p align="center">
+  <img src="images/VendorsVenuesPage.png" alt="image alt" width="600" />
+</p>
+
+<h3>Booking Page</h3>
+<p align="center">
+  <img src="images/BookingPage.png" alt="image alt" width="600" />
+</p>
+
